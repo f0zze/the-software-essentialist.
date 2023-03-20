@@ -1,17 +1,21 @@
 export function fizzBuzz(number: number) {
-    if (isMultiplesOff(number, [3, 5])) {
+    const isMultipleOfThree = isMultiplesOff(3)
+    const isMultipleOfFive = isMultiplesOff(5)
+    const isMultipleOfFiveAnd3 = isMultiplesOff(3, 5)
+
+    if (isMultipleOfFiveAnd3(number)) {
         return 'FizzBuzz';
     }
-    if (isMultiplesOff(number, [3])) {
+    if (isMultipleOfThree(number)) {
         return 'Fizz';
     }
-    if (isMultiplesOff(number, [5])) {
+    if (isMultipleOfFive(number)) {
         return 'Buzz';
     }
 
     return String(number);
 }
 
-function isMultiplesOff(value: number, multiples: number[]) {
-    return multiples.every(m => value % m === 0);
+function isMultiplesOff(...multiples: number[]) {
+    return (value: number) => multiples.every(m => value % m === 0);
 }
