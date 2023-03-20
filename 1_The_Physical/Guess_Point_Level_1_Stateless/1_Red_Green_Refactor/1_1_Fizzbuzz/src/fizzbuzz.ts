@@ -1,8 +1,6 @@
 export function fizzBuzz(number: number) {
 
-    if (number < 1 || number > 100) {
-        throw new Error('Number must be between 1 and 100');
-    }
+    validateNumber(number)
 
     const isMultipleOfThree = isMultiplesOff(3)
     const isMultipleOfFive = isMultiplesOff(5)
@@ -19,6 +17,12 @@ export function fizzBuzz(number: number) {
     }
 
     return String(number);
+}
+
+function validateNumber(number: number) {
+    if (number < 1 || number > 100) {
+        throw new Error('Number must be between 1 and 100');
+    }
 }
 
 function isMultiplesOff(...multiples: number[]) {
