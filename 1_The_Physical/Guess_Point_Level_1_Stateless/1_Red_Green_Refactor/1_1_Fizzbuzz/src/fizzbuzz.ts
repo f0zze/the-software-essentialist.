@@ -1,13 +1,17 @@
 export function fizzBuzz(number: number) {
-    if(number % 3 === 0 && number % 5 === 0) {
+    if (isMultiplesOff(number, [3, 5])) {
         return 'FizzBuzz';
     }
-    if (number % 3 === 0) {
+    if (isMultiplesOff(number, [3])) {
         return 'Fizz';
     }
-    if (number % 5 === 0) {
+    if (isMultiplesOff(number, [5])) {
         return 'Buzz';
     }
 
     return String(number);
+}
+
+function isMultiplesOff(value: number, multiples: number[]) {
+    return multiples.every(m => value % m === 0);
 }
