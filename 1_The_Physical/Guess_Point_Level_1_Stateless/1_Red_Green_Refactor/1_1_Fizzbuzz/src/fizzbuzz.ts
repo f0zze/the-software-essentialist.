@@ -1,6 +1,6 @@
 export function fizzBuzz(number: number) {
 
-    if (number < 1) {
+    if (number < 1 || number > 100) {
         throw new Error('Number must be between 1 and 100');
     }
 

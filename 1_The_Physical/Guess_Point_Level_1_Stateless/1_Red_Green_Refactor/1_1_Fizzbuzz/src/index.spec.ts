@@ -1,5 +1,8 @@
 import { fizzBuzz } from "./fizzbuzz"
 describe("fizzbuzz", () => {
+    it("should throw when number greater than 100", () => {
+        expect(() => fizzBuzz(101)).toThrow()
+    })
     it("should throw when number less than 1", () => {
         expect(() => fizzBuzz(0)).toThrow();
     });
