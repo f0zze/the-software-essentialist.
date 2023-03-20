@@ -2,9 +2,9 @@ export function fizzBuzz(number: number) {
 
     validateNumber(number)
 
-    const isMultipleOfThree = isMultiplesOff(3)
-    const isMultipleOfFive = isMultiplesOff(5)
-    const isMultipleOfFiveAnd3 = isMultiplesOff(3, 5)
+    const isMultipleOfThree = isMultiplesOf(3)
+    const isMultipleOfFive = isMultiplesOf(5)
+    const isMultipleOfFiveAnd3 = isMultiplesOf(3, 5)
 
     if (isMultipleOfFiveAnd3(number)) {
         return 'FizzBuzz';
@@ -25,6 +25,6 @@ function validateNumber(number: number) {
     }
 }
 
-function isMultiplesOff(...multiples: number[]) {
+function isMultiplesOf(...multiples: number[]) {
     return (value: number) => multiples.every(m => value % m === 0);
 }
