@@ -1,5 +1,8 @@
 import { fizzBuzz } from "./fizzbuzz"
 describe("fizzbuzz", () => {
+    it("should throw when number less than 1", () => {
+        expect(() => fizzBuzz(0)).toThrow();
+    });
     it("should return a string", () => {
         expect(typeof fizzBuzz(1)).toBe("string");
     })

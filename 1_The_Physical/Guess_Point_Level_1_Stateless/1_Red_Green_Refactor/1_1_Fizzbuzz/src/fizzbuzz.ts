@@ -1,4 +1,9 @@
 export function fizzBuzz(number: number) {
+
+    if (number < 1) {
+        throw new Error('Number must be between 1 and 100');
+    }
+
     const isMultipleOfThree = isMultiplesOff(3)
     const isMultipleOfFive = isMultiplesOff(5)
     const isMultipleOfFiveAnd3 = isMultiplesOff(3, 5)
