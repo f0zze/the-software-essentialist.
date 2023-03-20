@@ -4,9 +4,9 @@ export function fizzBuzz(number: number) {
 
     const isMultipleOfThree = isMultiplesOf(3)
     const isMultipleOfFive = isMultiplesOf(5)
-    const isMultipleOfFiveAnd3 = isMultiplesOf(3, 5)
+    const isMultipleOfFiveAndThree = isMultiplesOf(3, 5)
 
-    if (isMultipleOfFiveAnd3(number)) {
+    if (isMultipleOfFiveAndThree(number)) {
         return 'FizzBuzz';
     }
     if (isMultipleOfThree(number)) {
